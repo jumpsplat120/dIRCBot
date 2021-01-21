@@ -7,7 +7,7 @@
     <groupId>com.denizenscript</groupId>
     <artifactId>dircbot</artifactId>
     <packaging>jar</packaging>
-    <version>0.3</version>
+    <version>0.4</version>
     <name>dIRCBot</name>
     <description>Adds an IRCBot to Denizen</description>
 
