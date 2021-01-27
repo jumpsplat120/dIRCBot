@@ -88,7 +88,7 @@ public class IRCServerHolder extends Thread {
             ConnectCallback.run();
             String buffer = "";
             while (true) {
-//                try {
+                try {
 //                  For this personal fork, for twitch, no ping pls  
 //                    long start = System.currentTimeMillis();
 //                    boolean pinged = false;
