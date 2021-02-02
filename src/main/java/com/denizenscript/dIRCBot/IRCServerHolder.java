@@ -67,14 +67,12 @@ public class IRCServerHolder extends Thread {
 
     @Override
     public void run() {
-        while (true) {
-            try {
-                internalrun();
-            }
-            catch (Exception e) {
-                if (!(e instanceof IOException)) {
-                    return;
-                }
+        try {
+            internalrun();
+        }
+        catch (Exception e) {
+            if (!(e instanceof IOException)) {
+                return;
             }
         }
     }
@@ -89,20 +87,6 @@ public class IRCServerHolder extends Thread {
             String buffer = "";
             while (true) {
                 try {
-//                  For this personal fork, for twitch, no ping pls  
-//                    long start = System.currentTimeMillis();
-//                    boolean pinged = false;
-//                    while (!in.ready()) {
-//                        long now = System.currentTimeMillis();
-//                        if (!pinged && now - start > 60 * 1000) {
-//                            out.println("PING " + new Random().nextInt(1000) + "\n");
-//                            pinged = true;
-//                        }
-//                        if (now - start > 60 * 2 * 1000) {
-//                            throw new IOException("IRC ping timed out!");
-//                        }
-//                        Thread.sleep(1);
-//                    }
                     char c = (char) in.read();
                     buffer += String.valueOf(c);
                     if (Debug.verbose) {
